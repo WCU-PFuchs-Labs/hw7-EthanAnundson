@@ -44,6 +44,7 @@ public class GPTree implements Collector {
      * separated by semicolons
      */
     public String getCrossNodes() {
+        if (crossNodes.isEmpty()) return "";
         StringBuilder string = new StringBuilder();
         int lastIndex = crossNodes.size() - 1;
         for(int i = 0; i < lastIndex; ++i) {
