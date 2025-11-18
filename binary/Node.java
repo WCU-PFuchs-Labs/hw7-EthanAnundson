@@ -120,12 +120,14 @@ public class Node{
     }
   }
   public void traverse(Collector c){
-    c.collect(this);
     if (left != null){
         left.traverse(c);
     }
     if (right != null){
         right.traverse(c);
+    }
+    if (this instanceof BinOp){  // Only collect binary operations
+        c.collect(this);
     }
   }
 
