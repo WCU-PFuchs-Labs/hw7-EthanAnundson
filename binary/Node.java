@@ -126,7 +126,7 @@ public class Node{
     if (right != null){
         right.traverse(c);
     }
-    if (this instanceof BinOp){  // Only collect binary operations
+    if (this instanceof Binop){  // Only collect binary operations
         c.collect(this);
     }
   }
