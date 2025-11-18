@@ -130,9 +130,8 @@ public class Node{
         right.traverse(c);
     }
 
-    // Collect this node **only if it's a binary operation**
-    if (this instanceof Binop) {
-        c.collect((Binop) this);  // cast is required
+    if (operation instanceof Binop) {
+        c.collect(this);
     }
   }
 
