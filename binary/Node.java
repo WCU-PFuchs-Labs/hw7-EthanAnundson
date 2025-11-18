@@ -119,19 +119,13 @@ public class Node{
         return false;
     }
   }
-  public void traverse(Collector c) {
-    // Traverse left subtree first
+  public void traverse(Collector c){
+    c.collect(this);
     if (left != null) {
         left.traverse(c);
     }
-
-    // Traverse right subtree next
     if (right != null) {
         right.traverse(c);
-    }
-
-    if (operation instanceof Binop) {
-        c.collect(this);
     }
   }
 
