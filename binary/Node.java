@@ -119,15 +119,20 @@ public class Node{
         return false;
     }
   }
-  public void traverse(Collector c){
-    if (left != null){
+  public void traverse(Collector c) {
+    // Traverse left subtree first
+    if (left != null) {
         left.traverse(c);
     }
-    if (right != null){
+
+    // Traverse right subtree next
+    if (right != null) {
         right.traverse(c);
     }
-    if (this instanceof Binop){  // Only collect binary operations
-        c.collect(this);
+
+    // Collect this node **only if it's a binary operation**
+    if (this instanceof Binop) {
+        c.collect((Binop) this);  // cast is required
     }
   }
 
