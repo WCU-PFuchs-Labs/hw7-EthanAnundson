@@ -11,7 +11,7 @@ public class GPTree implements Collector {
      * 
      */
     public void collect(Node node) {
-    if (!node.isLeaf()) {
+    if (node.getoperation() instanceof Binop) {
         System.out.println("Collecting: " + node);
         crossNodes.add(node);
     } else {
