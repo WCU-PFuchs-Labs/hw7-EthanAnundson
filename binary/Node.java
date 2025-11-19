@@ -111,13 +111,8 @@ public class Node{
     right = trunk.right;
     trunk.right = place;
   }
-  public boolean isLeaf(){
-    if ((operation instanceof Unop) ||( left == null && right == null)){
-        return true;
-
-    } else {
-        return false;
-    }
+  public boolean isLeaf() {
+    return (operation instanceof Unop) || (left == null && right == null);
   }
   public void traverse(Collector c){
     c.collect(this);
