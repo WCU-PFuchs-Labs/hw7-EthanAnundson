@@ -9,7 +9,7 @@ public class NodeFactory {
         numIndepVars = numVars;
     }
     public Node getOperator(Random rand) {
-        int idx = (int)(Math.random() * currentOps.length);
+        int idx = rand.nextInt(currentOps.length);
         Binop opClone = (Binop) currentOps[idx].clone();
         return new Node(opClone);
     }
