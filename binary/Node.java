@@ -24,6 +24,9 @@ public class Node{
         this.right = right;
         this.operation = operation;
     }
+    public Op getoperation(){
+        return operation;
+    }
     public double eval(double[] values) {
         if (operation instanceof Unop) {
               double evaluate = ((Unop)operation).eval(values);
