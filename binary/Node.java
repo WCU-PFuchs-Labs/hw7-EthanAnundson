@@ -44,11 +44,17 @@ public class Node{
         }
     }
 
-    public String toString(){
-       if (left != null && right != null){
-         return ""+left.toString() + "" + operation + "" + right.toString()+"";
-       }
-       return operation+"";
+    public String toString() {
+    if (operation instanceof Binop) {
+        // Add parentheses around binary operations
+        return "(" + left.toString() + " " + operation + " " + right.toString() + ")";
+    } else if (operation instanceof Unop) {
+        // Optional: wrap unary operation in parentheses
+        return operation + "(" + left + ")";
+    } else {
+        // For terminals
+        return operation.toString();
+    }
     }
     public void addRandomKids(NodeFactory nf, int maxDepth, Random rand) {
       if (this.depth == maxDepth) {
