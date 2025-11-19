@@ -90,6 +90,7 @@ public class GPTree implements Collector {
     
     public GPTree(NodeFactory n, int maxDepth, Random rand) {
         root = n.getOperator(rand);
+        root.depth = 0;
         root.addRandomKids(n, maxDepth, rand);
     }
     
