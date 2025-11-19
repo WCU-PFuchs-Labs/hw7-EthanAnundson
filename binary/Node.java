@@ -45,16 +45,13 @@ public class Node{
     }
 
     public String toString() {
-    if (operation instanceof Binop) {
-        // Add parentheses around binary operations
-        return "(" + left.toString() + " " + operation + " " + right.toString() + ")";
-    } else if (operation instanceof Unop) {
-        // Optional: wrap unary operation in parentheses
-        return operation + "(" + left + ")";
-    } else {
-        // For terminals
+        if (isLeaf()) {
         return operation.toString();
-    }
+        } else {
+        return "(" + (left != null ? left.toString() : "?") +
+               " " + operation + " " +
+               (right != null ? right.toString() : "?") + ")";
+        }
     }
     public void addRandomKids(NodeFactory nf, int maxDepth, Random rand) {
       if (this.depth == maxDepth) {
