@@ -11,7 +11,7 @@ public class GPTree implements Collector {
      * 
      */
     public void collect(Node node) {
-        if (!node.isLeaf()){
+        if (node.isLeaf()== false){
             crossNodes.add(node);
         }
 
