@@ -112,7 +112,8 @@ public class Node{
     trunk.right = place;
   }
   public boolean isLeaf() {
-    return (operation instanceof Unop) || (left == null && right == null);
+    // A node is a leaf if it has no children
+    return left == null && right == null;
   }
   public void traverse(Collector c){
     c.collect(this);
