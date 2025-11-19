@@ -11,12 +11,12 @@ public class GPTree implements Collector {
      * 
      */
     public void collect(Node node) {
-        if (node.isLeaf()== false){
-            crossNodes.add(node);
-        }
-
-        // add node to crossNodes if it is not a leaf node
-        
+    if (!node.isLeaf()) {
+        System.out.println("Collecting: " + node);
+        crossNodes.add(node);
+    } else {
+        System.out.println("Skipping leaf: " + node);
+    }
     }
     
     
