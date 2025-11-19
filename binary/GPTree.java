@@ -11,12 +11,9 @@ public class GPTree implements Collector {
      * 
      */
     public void collect(Node node) {
-    if (node.getoperation() instanceof Binop) {
-        System.out.println("Collecting: " + node);
+        if (node.getoperation() instanceof Binop) {
         crossNodes.add(node);
-    } else {
-        System.out.println("Skipping leaf: " + node);
-    }
+        } 
     }
     
     
