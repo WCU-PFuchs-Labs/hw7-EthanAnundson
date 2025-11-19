@@ -112,7 +112,7 @@ public class Node{
     trunk.right = place;
   }
   public boolean isLeaf(){
-    if ((operation instanceof Unop) ||( left && right == null)){
+    if ((operation instanceof Unop) ||( left == null && right == null)){
         return true;
 
     } else {
